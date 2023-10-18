@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef } from "react";
+import WindowPrint from "./components/WindowPrint";
+import { PrintRefType } from "./components/WindowPrint/components/Print";
 
 function App() {
+  const printRef = useRef<PrintRefType>();
+  // 打印
+  const onPrint = async () => {
+    printRef.current?.handlePrint();
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div
+        onClick={onPrint}
+        style={{ width: 200, height: 100, backgroundColor: "red" }}
+      >
+        打印测试
+      </div>
+      <WindowPrint printRef={printRef} />
     </div>
   );
 }

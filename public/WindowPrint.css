@@ -1,0 +1,104 @@
+/* ❗❗❗❗此样式文件与public文件下的WindowPrint.css文件需要同步维护 */
+body {
+  margin: 0;
+  padding: 0;
+}
+.printContent {
+  page-break-inside: avoid;
+}
+.printContent .page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.printContent .table {
+  width: 100% !important;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.printContent tr td:first-child {
+  border-left: 1px solid #000;
+}
+.printContent td {
+  padding: 3px 1px;
+  word-break: break-all;
+  border: 1px solid black;
+  border-top: 0;
+  border-left: 0;
+}
+.printContent .noBorder > td {
+  padding-bottom: 6px;
+  border: 0 !important;
+}
+.printContent .thead {
+  border-top: 1px solid black;
+}
+.printContent .thead td {
+  font-weight: 500;
+}
+.printContent .tbody-thead {
+  text-align: center;
+}
+.printContent .content > td {
+  text-align: center;
+  word-wrap: break-word;
+}
+.printContent .threeHidden > p {
+  display: -webkit-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.printContent .footer {
+  width: 100%;
+}
+.printContent .footer .footerItem {
+  display: flex;
+  width: 100%;
+  padding-top: 10px;
+}
+.printContent .footer .footerPage {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.printContent .headLeft:first-of-type {
+  margin-top: 6px;
+}
+.printContent .headLeft {
+  display: flex;
+  width: 100%;
+}
+.printContent .headLeftItem {
+  display: -webkit-box;
+  flex: 1;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.printContent .listTitle {
+  display: flex;
+}
+.printContent .titleInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: end;
+  padding: 0;
+  font-weight: 500;
+}
+.printContent .title {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+.printContent .pageNumber {
+  position: absolute;
+  right: 0;
+}

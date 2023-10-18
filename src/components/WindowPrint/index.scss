@@ -1,0 +1,120 @@
+// ❗❗❗❗此样式文件与public文件下的WindowPrint.css文件需要同步维护
+// 💥💥💥💥若想调试打印样式，请注释printContent类名下的position、z-index、overflow、opacity样式
+.printContent {
+  position: fixed;
+  z-index: -100000000000;
+  overflow: hidden;
+  line-height: normal;
+  opacity: 0;
+  .page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    .table {
+      width: 100% !important;
+      table-layout: fixed;
+      border-collapse: collapse;
+      border-spacing: 0;
+      tr td:first-child {
+        border-left: 1px solid #000;
+      }
+      td {
+        padding: 3px 1px;
+        word-break: break-all;
+        border: 1px solid black;
+        border-top: 0;
+        border-left: 0;
+      }
+      .noBorder > td {
+        padding-bottom: 6px;
+        border: 0 !important;
+      }
+      .listTitle {
+        display: flex;
+      }
+      .titleInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: end;
+        padding: 0;
+        font-weight: 500;
+        .headLeft:first-of-type {
+          margin-top: 6px;
+        }
+        .headLeft {
+          display: flex;
+          width: 100%;
+          .headLeftItem {
+            display: -webkit-box;
+            flex: 1;
+            overflow: hidden;
+            font-size: 12px;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+          }
+        }
+        .title {
+          position: relative;
+          width: 100%;
+          margin: 0;
+          font-size: 24px;
+          .pageNumber {
+            position: absolute;
+            right: 0;
+            font-size: 16px;
+          }
+        }
+        .code {
+          font-size: 12px;
+        }
+      }
+      .thead {
+        border-top: 1px solid black;
+        td {
+          font-weight: 500;
+        }
+      }
+      .tbody-thead {
+        text-align: center;
+      }
+      .content > td {
+        text-align: center;
+        word-wrap: break-word;
+      }
+      .threeHidden > p {
+        display: -webkit-box;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+    }
+    .footer {
+      width: 100%;
+      .footerItem {
+        display: flex;
+        width: 100%;
+        padding-top: 10px;
+      }
+      .footerPage {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+.triplicateForm {
+  font-size: 12px !important;
+  .title {
+    font-size: 16px !important;
+    .pageNumber {
+      font-size: 12px !important;
+    }
+  }
+}
